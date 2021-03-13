@@ -28,6 +28,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.screens.HomeScreen
 import com.example.androiddevchallenge.screens.LoginScreen
 import com.example.androiddevchallenge.screens.WelcomeScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
@@ -60,12 +61,12 @@ fun MyApp() {
 
             composable(route = "login") {
                 LoginScreen() {
-
+                    navController.navigate("home")
                 }
             }
 
             composable(route = "home") {
-
+                HomeScreen()
             }
         }
     }
