@@ -171,21 +171,21 @@ fun LoginScreen(onLogin: () -> Unit = {}) {
                         onValueChange = { password.value = it }
                     )
                 }
-            }
 
-            Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
-            Button(
-                shape = RoundedCornerShape(18.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp),
-                onClick = {
-                    Timber.i("Login Button Clicked")
-                    onLogin()
+                Button(
+                    shape = RoundedCornerShape(18.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(48.dp),
+                    onClick = {
+                        Timber.i("Login Button Clicked")
+                        onLogin()
+                    }
+                ) {
+                    Text(text = "LOG IN")
                 }
-            ) {
-                Text(text = "LOG IN")
             }
         }
     }
