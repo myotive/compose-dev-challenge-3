@@ -17,27 +17,43 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
+
+private val fontFamily = FontFamily(
+    Font(R.font.montserrat_regular),
+    Font(R.font.montserrat_italic, style = FontStyle.Italic),
+    Font(R.font.montserrat_bold, FontWeight.Bold),
+    Font(R.font.montserrat_extrabold, FontWeight.ExtraBold),
+    Font(R.font.montserrat_semibold, FontWeight.SemiBold),
+    Font(R.font.montserrat_medium, FontWeight.Medium),
+    Font(R.font.montserrat_light, FontWeight.Light),
+)
 
 // Set of Material typography styles to start with
 val typography = Typography(
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-        /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.Light,
+        fontSize = 13.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+    h1 = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 40.sp,
+        letterSpacing = 1.25.em
+    ),
+    h2 = TextStyle(),
+    h3 = TextStyle(),
+    subtitle1 = TextStyle(),
+    button = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 13.sp,
     )
-    */
 )
