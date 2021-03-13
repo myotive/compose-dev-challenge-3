@@ -48,9 +48,21 @@ val typography = Typography(
         fontSize = 40.sp,
         letterSpacing = 1.25.em
     ),
-    h2 = TextStyle(),
-    h3 = TextStyle(),
-    subtitle1 = TextStyle(),
+    h2 = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 36.sp,
+    ),
+    h3 = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 13.sp,
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 15.sp,
+    ),
     button = TextStyle(
         fontFamily = fontFamily,
         fontWeight = FontWeight.Bold,
