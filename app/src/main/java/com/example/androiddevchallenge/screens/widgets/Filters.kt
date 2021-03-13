@@ -20,12 +20,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.model.Filter
+import com.example.androiddevchallenge.model.FinancialPosition
 
 @Composable
 fun Filters() = LazyRow(
     modifier = Modifier
         .fillMaxWidth()
         .offset(x = 10.dp)
+        .padding(end = 20.dp)
         .height(40.dp),
     horizontalArrangement = Arrangement.SpaceEvenly,
     content = {
@@ -51,23 +54,28 @@ fun Filters() = LazyRow(
                 )
             }
         }
-        items(10) {
-            OutlinedButton(
-                shape = RoundedCornerShape(18.dp),
-                modifier = Modifier
-                    .height(40.dp)
-                    .padding(start = 8.dp),
-                border = BorderStroke(1.dp, MaterialTheme.colors.onBackground),
-                colors = ButtonDefaults.outlinedButtonColors(
-                    contentColor = MaterialTheme.colors.onBackground,
-                    backgroundColor = Color.Transparent,
-                ),
-                onClick = { /*TODO*/ }) {
-                Text(
-                    text = "EFTs",
-                )
+
+        Filter::class.sealedSubclasses.mapNotNull { it.objectInstance }
+            .forEach {
+                filter ->
+                item {
+                    OutlinedButton(
+                        shape = RoundedCornerShape(18.dp),
+                        modifier = Modifier
+                            .height(40.dp)
+                            .padding(start = 8.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            contentColor = MaterialTheme.colors.onBackground,
+                            backgroundColor = Color.Transparent,
+                        ),
+                        onClick = { /*TODO*/ }) {
+                        Text(
+                            text = filter.name,
+                        )
+                    }
+                }
             }
-        }
     })
 
 
