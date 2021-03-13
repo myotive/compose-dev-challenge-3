@@ -1,4 +1,4 @@
-# Android Dev Challenge 3 - Americas - WeTrad 
+# Android Dev Challenge 3 - Americas - WeTrade
 
 
 ![Workflow result](https://github.com/myotive/compose-dev-challenge-3/workflows/Check/badge.svg)
