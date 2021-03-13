@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Button
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -87,76 +89,96 @@ fun LoginScreen(onLogin: () -> Unit = {}) {
                     .weight(1f)
             ) {
 
-                TextField(value = emailAddress.value,
+                Card(
+                    shape = RoundedCornerShape(8.dp),
+                    elevation = 0.dp,
+                    backgroundColor = MaterialTheme.colors.surface,
+                    border = BorderStroke(1.dp,MaterialTheme.colors.onSurface ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp),
-                    label = {
-                        Text(
-                            text = "Email Address", color = MaterialTheme.colors.onSurface,
-                            style = MaterialTheme.typography.body1,
-                        )
-                    },
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_email),
-                            contentDescription = "Email Address",
-                            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface)
-                        )
-                    },
-                    colors = TextFieldDefaults.textFieldColors(
-                        backgroundColor = Color.Transparent,
-                        textColor = MaterialTheme.colors.onSurface,
-                        focusedIndicatorColor = MaterialTheme.colors.onSurface,
-                        cursorColor = MaterialTheme.colors.onSurface,
-                    ),
-                    onValueChange = { emailAddress.value = it })
+
+                    ) {
+                    TextField(value = emailAddress.value,
+                        label = {
+                            Text(
+                                text = "Email Address", color = MaterialTheme.colors.onSurface,
+                                style = MaterialTheme.typography.body1,
+                            )
+                        },
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.ic_email),
+                                contentDescription = "Email Address",
+                                colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface)
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(
+                            backgroundColor = Color.Transparent,
+                            textColor = MaterialTheme.colors.onSurface,
+                            focusedIndicatorColor = Color.Transparent,
+                            unfocusedIndicatorColor = Color.Transparent,
+                            cursorColor = MaterialTheme.colors.onSurface,
+                        ),
+                        onValueChange = { emailAddress.value = it })
+                }
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                TextField(value = password.value,
+                Card(
+                    shape = RoundedCornerShape(8.dp),
+                    elevation = 0.dp,
+                    backgroundColor = MaterialTheme.colors.surface,
+                    border = BorderStroke(1.dp,MaterialTheme.colors.onSurface ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp),
-                    label = {
-                        Text(
-                            text = "Password",
-                            color = MaterialTheme.colors.onSurface,
-                            style = MaterialTheme.typography.body1,
-                        )
-                    },
-                    leadingIcon = {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_password),
-                            contentDescription = "Password",
-                            colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface)
-                        )
-                    },
-                    colors = TextFieldDefaults.textFieldColors(
-                        backgroundColor = Color.Transparent,
-                        textColor = MaterialTheme.colors.onSurface,
-                        focusedIndicatorColor = MaterialTheme.colors.onSurface,
-                        cursorColor = MaterialTheme.colors.onSurface,
-                    ),
-                    onValueChange = { password.value = it })
 
-                Spacer(modifier = Modifier.height(16.dp))
+                ) {
 
-                Button(
-                    shape = RoundedCornerShape(18.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp),
-                    onClick = {
-                        Timber.i("Login Button Clicked")
-                        onLogin()
-                    }) {
-                    Text(text = "LOG IN")
+                    TextField(value = password.value,
+                        label = {
+                            Text(
+                                text = "Password",
+                                color = MaterialTheme.colors.onSurface,
+                                style = MaterialTheme.typography.body1,
+                            )
+                        },
+                        leadingIcon = {
+                            Image(
+                                painter = painterResource(id = R.drawable.ic_password),
+                                contentDescription = "Password",
+                                colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface)
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(
+                            backgroundColor = Color.Transparent,
+                            textColor = MaterialTheme.colors.onSurface,
+                            focusedIndicatorColor = Color.Transparent,
+                            unfocusedIndicatorColor = Color.Transparent,
+                            cursorColor = MaterialTheme.colors.onSurface,
+                        ),
+                        onValueChange = { password.value = it })
+
                 }
             }
 
+            Spacer(modifier = Modifier.height(16.dp))
 
+            Button(
+                shape = RoundedCornerShape(18.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                onClick = {
+                    Timber.i("Login Button Clicked")
+                    onLogin()
+                }) {
+                Text(text = "LOG IN")
+            }
         }
+
+
     }
 }
 
