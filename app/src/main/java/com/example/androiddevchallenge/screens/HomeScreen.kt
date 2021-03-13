@@ -11,6 +11,7 @@ import com.example.androiddevchallenge.screens.widgets.CurrentBalance
 import com.example.androiddevchallenge.screens.widgets.Filters
 import com.example.androiddevchallenge.screens.widgets.Graph
 import com.example.androiddevchallenge.screens.widgets.HeaderRow
+import com.example.androiddevchallenge.screens.widgets.Positions
 
 @Composable
 fun HomeScreen() {
@@ -33,6 +34,10 @@ fun HomeScreen() {
 
         item {
             Graph()
+        }
+
+        item {
+            Positions()
         }
     }
 }

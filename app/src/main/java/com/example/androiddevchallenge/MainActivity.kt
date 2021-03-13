@@ -51,7 +51,7 @@ fun MyApp() {
     navController.setLifecycleOwner(LocalLifecycleOwner.current)
 
     Surface(color = MaterialTheme.colors.background) {
-        NavHost(navController = navController, startDestination = "welcome") {
+        NavHost(navController = navController, startDestination = "home") {
 
             composable(route = "welcome") {
                 WelcomeScreen(){
